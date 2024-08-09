@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Massage Services for Girls</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)
+            ), url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(255, 192, 203, 0.9);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        #form-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 15px;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        #price-display {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: rgba(255, 192, 203, 0.9);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+            font-size: 0.9em;
+        }
+
+        .note {
+            font-family: 'Jameel Noori Nastaleeq', sans-serif;
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-align: center;
+            color: #721046;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            #form-section {
+                margin: 10px;
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            button {
+                font-size: 1em;
+                padding: 12px;
+            }
+
+            .note {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Home Massage Services for Girls</h1>
+    </header>
+    <section id="form-section">
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-number">Contact Number:</label>
+                <input type="tel" id="contact-number" name="contact-number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="whatsapp-number">WhatsApp Number:</label>
+                <input type="tel" id="whatsapp-number" name="whatsapp-number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <select id="city" name="city" required>
+                    <option value="Choose">Choose</option>
+                    <option value="Gujranwala">Gujranwala</option>
+                    <option value="Multan">Multan</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Faisalabad">Faisalabad</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Sialkot">Sialkot</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" style="height: 100px;" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service:</label>
+                <select id="service" name="service" required>
+                    <option value="Choose">Choose</option>
+                    <option value="head-massage">Head Massage</option>
+                    <option value="arm-shoulder-massage">Arm & Shoulder Massage</option>
+                    <option value="belly-breast-massage">Belly & Breast Massage</option>
+                    <option value="back-hip-massage">Back & Hip Massage</option>
+                    <option value="legs-massage">Legs Massage</option>
+                    <option value="other-services">Other Services</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="service-recipient">Kis Ko Service Chahye:</label>
+                <select id="service-recipient" name="service-recipient" required>
+                    <option value="Choose">Choose</option>
+                    <option value="female">Female</option>
+                    <option value="couple">Couple</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="people-number">Kitne Logo Ko Service Chahye:</label>
+                <input type="number" id="people-number" name="people-number" min="1" max="10" required>
+            </div>
+
+            <div id="price-display">Advance 4000 | Total 4000</div>
+
+            <button type="submit">Submit</button>
+            <div class="note">
+                Note: Boy will provide services<br>
+                نوٹ : لڑکا آپ کو مساج سروس دے گا
+            </div>
+        </form>
+    </section>
+    <footer id="copyright-section">
+        <p>&copy; 2024 Home Massage Services for Girls</p>
+    </footer>
+
+    <script>
+        document.getElementById('people-number').addEventListener('input', function() {
+            const peopleCount = parseInt(this.value) || 0;
+            const advance = 4000;
+            const perPersonCost = 3000;
+            const total = advance + (perPersonCost * peopleCount);
+
+            document.getElementById('price-display').textContent = `Advance ${advance} | Total ${total}`;
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(`Name: ${name}\nAddress: ${address}`);
+
+            // WhatsApp URL with message
+            const whatsappURL = `https://api.whatsapp.com/send?phone=923206258977&text=${encodedMessage}`;
+
+            // Open WhatsApp with the pre-filled message
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
