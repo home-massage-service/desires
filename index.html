@@ -3,237 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Massage Services for Girls</title>
+    <title>Home Massage Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.5),
-                rgba(0, 0, 0, 0.5)
-            ), url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
-        }
-
-        header {
-            background-color: rgba(255, 192, 203, 0.9);
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        #form-section {
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 90%;
-            margin: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
-
-        input, textarea, select {
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
             box-sizing: border-box;
         }
-
-        button {
-            padding: 15px;
-            background-color: #ff69b4;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
-
-        button:hover {
-            background-color: #ff1493;
+        .background-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #f7d1c9, #f0a1b2, #f9c5d1, #f8b1bb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
         }
-
-        #price-display {
-            font-size: 1.2em;
-            margin-bottom: 10px;
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-container h2 {
             text-align: center;
-            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff7e5f;
+            font-size: 28px;
         }
-
         .form-group {
             margin-bottom: 15px;
         }
-
-        footer {
-            background-color: rgba(255, 192, 203, 0.9);
-            text-align: center;
-            padding: 10px;
-            position: fixed;
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .form-group input, .form-group select {
             width: 100%;
-            bottom: 0;
-            z-index: 1000;
-            font-size: 0.9em;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease;
         }
-
-        .note {
-            font-family: 'Jameel Noori Nastaleeq', sans-serif;
-            font-size: 1.2em;
-            margin-top: 10px;
-            text-align: center;
-            color: #721046;
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            box-shadow: 0px 0px 10px rgba(255, 126, 95, 0.5);
+            border-color: #ff7e5f;
         }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
+        .submit-btn {
+            background-color: #ff7e5f;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #eb6349;
+            transform: translateY(-3px);
+        }
+        .description {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .description p {
+            margin-bottom: 8px;
+        }
+        .description strong {
+            color: #ff7e5f;
+        }
+        .description-urdu {
+            text-align: right;
+            font-size: 14px;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
             }
-
-            #form-section {
-                margin: 10px;
-                padding: 15px;
-                max-width: 100%;
-            }
-
-            button {
-                font-size: 1em;
-                padding: 12px;
-            }
-
-            .note {
-                font-size: 1em;
+            .submit-btn {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Home Massage Services for Girls</h1>
-    </header>
-    <section id="form-section">
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+    <div class="background-animation"></div>
 
-            <div class="form-group">
-                <label for="contact-number">Contact Number:</label>
-                <input type="tel" id="contact-number" name="contact-number" required>
-            </div>
+    <div class="form-container">
+        <h2>Home Massage Service</h2>
 
-            <div class="form-group">
-                <label for="whatsapp-number">WhatsApp Number:</label>
-                <input type="tel" id="whatsapp-number" name="whatsapp-number" required>
-            </div>
+        <!-- Description in English and Urdu -->
+        <div class="description">
+            <p><strong>How it works:</strong> After filling out the form with your details, you will be directed to WhatsApp, where your provided information will be sent directly to us for quicker response and booking confirmation. Just click "Submit" to start the conversation!</p>
+        </div>
+        <div class="description-urdu">
+            <p><strong>یہ کیسے کام کرتا ہے:</strong> فارم میں اپنی معلومات بھرنے کے بعد آپ کو واٹس ایپ پر منتقل کیا جائے گا، جہاں آپ کی فراہم کردہ معلومات براہ راست ہمارے پاس بھیجی جائیں گی تاکہ جلد از جلد جواب اور بکنگ کی تصدیق کی جا سکے۔ بس "Submit" پر کلک کریں اور بات چیت شروع کریں!</p>
+        </div>
 
+        <form id="massageForm">
             <div class="form-group">
-                <label for="city">City:</label>
-                <select id="city" name="city" required>
-                    <option value="Choose">Choose</option>
-                    <option value="Gujranwala">Gujranwala</option>
-                    <option value="Multan">Multan</option>
-                    <option value="Gujrat">Gujrat</option>
+                <label for="name">Full Name / نام</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number / رابطہ نمبر</label>
+                <input type="tel" id="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="whatsapp">WhatsApp Number / واٹس ایپ نمبر</label>
+                <input type="tel" id="whatsapp" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City / شہر</label>
+                <select id="city" required>
+                    <option value="">Select City</option>
                     <option value="Karachi">Karachi</option>
-                    <option value="Faisalabad">Faisalabad</option>
                     <option value="Lahore">Lahore</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Faisalabad">Faisalabad</option>
+                    <option value="Multan">Multan</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Quetta">Quetta</option>
                     <option value="Sialkot">Sialkot</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
-
             <div class="form-group">
-                <label for="address">Address:</label>
-                <textarea id="address" name="address" style="height: 100px;" required></textarea>
+                <label for="address">Full Address / مکمل پتہ</label>
+                <input type="text" id="address" required>
             </div>
-
             <div class="form-group">
-                <label for="service">Service:</label>
-                <select id="service" name="service" required>
-                    <option value="Choose">Choose</option>
-                    <option value="head-massage">Head Massage</option>
-                    <option value="arm-shoulder-massage">Arm & Shoulder Massage</option>
-                    <option value="belly-breast-massage">Belly & Breast Massage</option>
-                    <option value="back-hip-massage">Back & Hip Massage</option>
-                    <option value="legs-massage">Legs Massage</option>
-                    <option value="other-services">Other Services</option>
+                <label for="service">Which Service Do You Want? / آپ کو کونسی سروس چاہیے؟</label>
+                <select id="service" required>
+                    <option value="neck">Neck Massage / گردن</option>
+                    <option value="arm">Arm Massage / بازو</option>
+                    <option value="breast">Breast Massage / چھاتی</option>
+                    <option value="belly">Belly Massage / پیٹ</option>
+                    <option value="back">Back Massage / کمر</option>
+                    <option value="hip">Hip Massage / کولہے</option>
+                    <option value="legs">Legs Massage / ٹانگیں</option>
+                    <option value="upper_body">Upper Body Massage / اوپری جسم</option>
+                    <option value="lower_body">Lower Body Massage / نچلا جسم</option>
+                    <option value="other">Other Services / دیگر خدمات</option>
                 </select>
             </div>
-
             <div class="form-group">
-                <label for="service-recipient">Kis Ko Service Chahye:</label>
-                <select id="service-recipient" name="service-recipient" required>
-                    <option value="Choose">Choose</option>
-                    <option value="female">Female</option>
-                    <option value="couple">Couple</option>
+                <label for="recipient">Who Needs the Service? / سروس کس کو چاہیے؟</label>
+                <select id="recipient" required>
+                    <option value="male">Male / مرد</option>
+                    <option value="female">Female / عورت</option>
+                    <option value="couple">Couple / جوڑا</option>
                 </select>
             </div>
-
-            <div class="form-group">
-                <label for="people-number">Kitne Logo Ko Service Chahye:</label>
-                <input type="number" id="people-number" name="people-number" min="1" max="10" required>
-            </div>
-
-            <div id="price-display">Advance 4000 | Total 4000</div>
-
-            <button type="submit">Submit</button>
-            <div class="note">
-                Note: Boy will provide services<br>
-                نوٹ : لڑکا آپ کو مساج سروس دے گا
-            </div>
+            <button type="submit" class="submit-btn">Submit / جمع کریں</button>
         </form>
-    </section>
-    <footer id="copyright-section">
-        <p>&copy; 2024 Home Massage Services for Girls</p>
-    </footer>
+    </div>
 
     <script>
-        document.getElementById('people-number').addEventListener('input', function() {
-            const peopleCount = parseInt(this.value) || 0;
-            const advance = 4000;
-            const perPersonCost = 3000;
-            const total = advance + (perPersonCost * peopleCount);
-
-            document.getElementById('price-display').textContent = `Advance ${advance} | Total ${total}`;
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
+        document.getElementById('massageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
             const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const city = document.getElementById('city').value;
             const address = document.getElementById('address').value;
+            const service = document.getElementById('service').value;
+            const recipient = document.getElementById('recipient').value;
 
-            // Encode the message for URL
-            const encodedMessage = encodeURIComponent(`Name: ${name}\nAddress: ${address}`);
+            const whatsappMessage = `Name: ${name}%0AContact: ${contact}%0AWhatsApp: ${whatsapp}%0ACity: ${city}%0AAddress: ${address}%0AService: ${service}%0ARecipient: ${recipient}`;
+            const whatsappURL = `https://api.whatsapp.com/send?phone=+923206258977&text=${whatsappMessage}`;
 
-            // WhatsApp URL with message
-            const whatsappURL = `https://api.whatsapp.com/send?phone=923206258977&text=${encodedMessage}`;
-
-            // Open WhatsApp with the pre-filled message
             window.open(whatsappURL, '_blank');
         });
     </script>
