@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Massage Service</title>
+    <!-- Link to Jameel Noori Nastaleeq or Google Fonts for Urdu font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -102,10 +104,12 @@
         .description strong {
             color: #ff7e5f;
         }
+        /* Urdu font styling for Jameel Noori Nastaleeq */
         .description-urdu {
             text-align: right;
             font-size: 14px;
             color: #555;
+            font-family: 'Jameel Noori Nastaleeq', serif;
         }
         @media (max-width: 600px) {
             .form-container {
@@ -168,6 +172,7 @@
             <div class="form-group">
                 <label for="service">Which Service Do You Want? / آپ کو کونسی سروس چاہیے؟</label>
                 <select id="service" required>
+                    <option value="">Select </option>
                     <option value="neck">Neck Massage / گردن</option>
                     <option value="arm">Arm Massage / بازو</option>
                     <option value="breast">Breast Massage / چھاتی</option>
@@ -183,6 +188,7 @@
             <div class="form-group">
                 <label for="recipient">Who Needs the Service? / سروس کس کو چاہیے؟</label>
                 <select id="recipient" required>
+                    <option value="">Select </option>
                     <option value="male">Male / مرد</option>
                     <option value="female">Female / عورت</option>
                     <option value="couple">Couple / جوڑا</option>
@@ -193,8 +199,8 @@
     </div>
 
     <script>
-        document.getElementById('massageForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        document.getElementById('massageForm').addEventListener('submit', function (e) {
+            e.preventDefault();
             const name = document.getElementById('name').value;
             const contact = document.getElementById('contact').value;
             const whatsapp = document.getElementById('whatsapp').value;
